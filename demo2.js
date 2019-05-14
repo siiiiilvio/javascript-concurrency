@@ -1,0 +1,5 @@
+function useTimeStone() {
+    useTimeStone();
+}
+
+useTimeStone();
