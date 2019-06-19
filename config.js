@@ -1,15 +1,15 @@
 const md5 = require('md5');
 const axios = require('axios');
 
-const config = {
+const configuration = {
     keys: {
         publicKey: '306da4671a64c46cddfe2f0e3f8e164c',
         privateKey: '5707976057ff0723b8a2681ff1d3f524ed69a6c8'
     },
     ts: Date.now()
 }
-
-const hash = md5(config.ts + config.keys.privateKey + config.keys.publicKey);
+const hash = md5(configuration.ts + configuration.keys.privateKey + configuration.keys.publicKey);
+const config = `ts=${configuration.ts}&apikey=${configuration.keys.publicKey}&hash=${hash}`;
 
 const fetch = (url) => {
     return new Promise((resolve) => 
