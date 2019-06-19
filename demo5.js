@@ -1,21 +1,20 @@
-console.time(`time`);
+console.time(`getting ready`);
 
 const excuse = `Sorry Triple J, I won’t make it in for work`;
 
 function summonSpiderman() {
     putSpidermanCostume();
-    // Promise.resolve().then(() => putSpidermanCostume());
-	callInSickForWork(excuse);
+    //Promise.resolve().then(() => putSpidermanCostume());
 }
 
 function putSpidermanCostume() {
-    //console.time(`time`);
+    console.time(`costume`);
 	let i = 0;
     while(i < 3000000000) {
         i++;
     };
     console.log(`🕷️ Costume is on!`);
-    // console.timeEnd(`time`);
+    console.timeEnd(`costume`);
 }
 
 function callInSickForWork(reason) {
@@ -24,4 +23,4 @@ function callInSickForWork(reason) {
 
 summonSpiderman();
 
-console.timeEnd(`time`);
+console.timeEnd(`getting ready`);
