@@ -13,7 +13,7 @@ const hash = md5(config.ts + config.keys.privateKey + config.keys.publicKey);
 
 const fetch = (url) => {
     return new Promise((resolve) => 
-        setTimeout(resolve, 1000)
+        setTimeout(resolve, 500)
     ).then(() => axios({
         url,
         headers: {
