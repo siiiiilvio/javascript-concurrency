@@ -4,9 +4,10 @@ const getComicBook = () => fetch(`https://gateway.marvel.com/v1/public/comics?ts
 const getCharacter = (name) => fetch(`https://gateway.marvel.com/v1/public/characters?ts=${config.ts}&apikey=${config.keys.publicKey}&hash=${hash}&name=${name}`);
 
 const getSuperHeroDescription = () => {
+    let name;
     getComicBook()
         .then((response) => {
-            const name = massageData(response);
+            name = massageData(response);
             return name;
         })
         .then((name) => {
@@ -14,7 +15,7 @@ const getSuperHeroDescription = () => {
         })
         .then((hero) => {
             const description = massageData(hero);
-            console.log(`${description}`);
+            console.log(`${name} ⛈️  : ${description}`);
         });
 }
 
@@ -27,7 +28,7 @@ getSuperHeroDescription();
 //     const characterResponse = await getCharacter(name);
 //     const description = massageData(characterResponse);
 
-//     console.log(`${description}`);
+//     console.log(`${name} ⛈️  : ${description}`);
 // }
 
 // getSuperHeroDescription();
