@@ -13,7 +13,7 @@ const hash = md5(config.ts + config.keys.privateKey + config.keys.publicKey);
 
 const fetch = (url) => {
     return new Promise((resolve) => 
-        setTimeout(resolve, 500)
+        setTimeout(resolve, 1000)
     ).then(() => axios({
         url,
         headers: {
@@ -23,9 +23,18 @@ const fetch = (url) => {
     }));
 }
 
+const massageData = (response) => {
+    const { results } = response.data.data;
+    if (results[0].characters) {
+        return results[0].characters.items[0].name
+    } else {
+        return results[0].description;
+    }
+}
+
 module.exports = { 
     config,
     hash,
-    response,
-    fetch
+    fetch,
+    massageData
 };

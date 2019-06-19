@@ -1,24 +1,24 @@
 const { config, hash, fetch } = require('./config');
 
-const apiRequest = fetch(`http://gateway.marvel.com/v1/public/characters?ts=${config.ts}&apikey=${config.keys.publicKey}&hash=${hash}&name=wolverine`);
+const apiRequest = (name) => fetch(`https://gateway.marvel.com/v1/public/characters?ts=${config.ts}&apikey=${config.keys.publicKey}&hash=${hash}&name=${name}`);
 
-const getWolverine = () => {
-    apiRequest.then((response) => {
+const getSuperHero = (name) => {
+    apiRequest(name).then((response) => {
         const { results } = response.data.data;
-        console.log(`I am ${results[0].name}!!`);
-    }).catch((e) =>
-        console.log(`Something went wrong: ${e}`)
-    );
+        console.log(`I am ${results[0].description}!!`);
+    });
+    
+   console.log('Waiting...');
 }
 
-const getWolverine = async () => {
-    try {
-        const response = await apiRequest;
-        const { results } = response.data.data;
-        console.log(`I am ${results[0].name}!!`);
-    } catch (error) {
-        console.log(`Something went wrong: ${error}`);
-    }
-}
+getSuperHero(`Wolverine`);
 
-getWolverine();
+// const getSuperHero = async (name) => {
+//     const response = await apiRequest(name);
+//     const { results } = response.data.data;
+//     console.log(`I am ${ results[0].description}!!`);
+    
+//     console.log('Waiting...');
+// }
+
+// getSuperHero(`Wolverine`);
