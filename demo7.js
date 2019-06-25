@@ -12,8 +12,6 @@ const getSuperHero = (name) => {
     console.log('Hey bub!');
 }
 
-getSuperHero(`Wolverine`);
-
 // const getSuperHero = async (name) => {
 //     const response = await apiRequest(name);
 //     const description = massageData(response);
@@ -22,4 +20,4 @@ getSuperHero(`Wolverine`);
 //     console.log('Hey bub!');
 // }
 
-// getSuperHero(`Wolverine`);
+getSuperHero(`Wolverine`);

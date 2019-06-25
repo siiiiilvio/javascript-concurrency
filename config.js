@@ -13,7 +13,7 @@ const config = `ts=${configuration.ts}&apikey=${configuration.keys.publicKey}&ha
 
 const fetch = (url) => {
     return new Promise((resolve) => 
-        setTimeout(resolve, 500)
+        setTimeout(resolve, 250)
     ).then(() => axios({
         url,
         headers: {

@@ -3,8 +3,8 @@ const excuse = `Sorry Triple J, I won’t make it in for work`;
 console.time(`getting ready`);
 
 function summonSpiderman() {
-    // putSpidermanCostume();
-    Promise.resolve().then(() => putSpidermanCostume());
+    putSpidermanCostume();
+    // Promise.resolve().then(() => putSpidermanCostume());
     callInSickForWork(excuse);
 }
 

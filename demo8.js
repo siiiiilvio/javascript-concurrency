@@ -12,11 +12,9 @@ const getSuperHeroDescription = () => {
         })
         .then((characterResponse) => {
             const description = massageData(characterResponse);
-            console.log(`${name} ⛈️  : ${description}`);
+            console.log(`${name} : ${description}`);
         });
 }
-
-getSuperHeroDescription();
 
 // const getSuperHeroDescription = async () => {
 //     const comicBookResponse = await getComicBook();
@@ -25,7 +23,7 @@ getSuperHeroDescription();
 //     const characterResponse = await getCharacter(name);
 //     const description = massageData(characterResponse);
 
-//     console.log(`${name} ⛈️  : ${description}`);
+//     console.log(`${name} : ${description}`);
 // }
 
-// getSuperHeroDescription();
+getSuperHeroDescription();
