@@ -4,7 +4,7 @@ function summonThor() {
 }
 
 function chargeMjolnir() {
-    setTimeout(() => console.log(`⚡`), 1000);
+    setTimeout(() => console.log(`\x1b[33m`, `⚡`), 1000);
 }
 
 summonThor();
