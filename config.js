@@ -1,18 +1,21 @@
 const md5 = require('md5');
 const axios = require('axios');
 
+// Configuration for the Marvel API
 const configuration = {
     keys: {
-        publicKey: '306da4671a64c46cddfe2f0e3f8e164c',
-        privateKey: '5707976057ff0723b8a2681ff1d3f524ed69a6c8'
+        publicKey: 'YourMarvelPublicKeyHere',
+        privateKey: 'YourMarvelPrivateKeyHere'
     },
     ts: Date.now()
 }
 const hash = md5(configuration.ts + configuration.keys.privateKey + configuration.keys.publicKey);
 const config = `ts=${configuration.ts}&apikey=${configuration.keys.publicKey}&hash=${hash}`;
 
+// Mocked fetch function using axios and simulated latency
 const fetch = (url) => {
     return new Promise((resolve) => 
+        // Add setTimeout to simulate latency
         setTimeout(resolve, 250)
     ).then(() => axios({
         url,
@@ -23,6 +26,7 @@ const fetch = (url) => {
     }));
 }
 
+// Massage data to return character name or description
 const massageData = (response) => {
     if(response) {
         const { results } = response.data.data;

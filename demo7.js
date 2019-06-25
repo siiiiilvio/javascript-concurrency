@@ -6,7 +6,7 @@ const getSuperHero = (name) => {
     apiRequest(name)
         .then((response) => {
             const description = massageData(response);
-            console.log(`I am ${description} 🔪🔪🔪`);
+            console.log(`${description} 🔪🔪🔪`);
         });
     
     console.log('Hey bub!');
@@ -15,7 +15,7 @@ const getSuperHero = (name) => {
 // const getSuperHero = async (name) => {
 //     const response = await apiRequest(name);
 //     const description = massageData(response);
-//     console.log(`I am ${description} 🔪🔪🔪`);
+//     console.log(`${description} 🔪🔪🔪`);
     
 //     console.log('Hey bub!');
 // }
