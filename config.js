@@ -24,11 +24,13 @@ const fetch = (url) => {
 }
 
 const massageData = (response) => {
-    const { results } = response.data.data;
-    if (results[0].characters) {
-        return results[0].characters.items[0].name
-    } else {
-        return results[0].description;
+    if(response) {
+        const { results } = response.data.data;
+        if (results[0].characters) {
+            return results[0].characters.items[0].name
+        } else {
+            return results[0].description;
+        }
     }
 }
 

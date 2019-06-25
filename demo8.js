@@ -1,7 +1,7 @@
 const { config, fetch, massageData } = require('./config');
 
 const getComicBook = () => fetch(`https://gateway.marvel.com/v1/public/comics?${config}`);
-const getCharacter = (name) => fetch(`https://gateway.marvel.com/v1/public/characters?ts=${config}&name=${name}`);
+const getCharacter = (name) => fetch(`https://gateway.marvel.com/v1/public/characters?${config}&name=${name}`);
 
 const getSuperHeroDescription = () => {
     let name;

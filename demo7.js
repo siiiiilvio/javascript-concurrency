@@ -1,4 +1,4 @@
-const { config, hash, fetch, massageData } = require('./config');
+const { config, fetch, massageData } = require('./config');
 
 const apiRequest = (name) => fetch(`https://gateway.marvel.com/v1/public/characters?${config}&name=${name}`);
 
@@ -9,7 +9,7 @@ const getSuperHero = (name) => {
             console.log(`I am ${description} 🔪🔪🔪`);
         });
     
-   console.log('Here...');
+    console.log('Hey bub!');
 }
 
 getSuperHero(`Wolverine`);
@@ -19,7 +19,7 @@ getSuperHero(`Wolverine`);
 //     const description = massageData(response);
 //     console.log(`I am ${description} 🔪🔪🔪`);
     
-//     console.log('Here...');
+//     console.log('Hey bub!');
 // }
 
 // getSuperHero(`Wolverine`);

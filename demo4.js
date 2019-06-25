@@ -4,9 +4,7 @@ function summonThanos() {
 }
 
 function summonAntMan() {
-    Promise.resolve().then(
-        console.log(`🐜`)
-    );
+    Promise.resolve().then(() => console.log(`🐜`));
 }
 
 summonThanos();

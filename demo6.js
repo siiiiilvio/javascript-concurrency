@@ -1,9 +1,9 @@
-const ufe = () => `Hey UFE!`;
+const groot = () => `I am Groot!`;
 
-console.log(ufe());
+console.log(groot());
 
-// const ufe = async () => `Hey UFE!`;
+// const groot = async () => `I am Groot!`;
 
-//console.log(ufe());
+// console.log(groot());
 
-//ufe().then((value) => console.log(value));
+// groot().then((value) => console.log(value));
